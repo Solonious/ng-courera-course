@@ -9,7 +9,7 @@ import transcribe from 'rune-converter';
 })
 export class HeaderComponent implements OnInit {
 
-  nordicHeader = transcribe('Nordic');
+  nordicHeader = transcribe('N o r d i c', {spacing: 'normal'});
 
   constructor() { }
 

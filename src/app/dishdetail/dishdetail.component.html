@@ -28,8 +28,8 @@
   </div>
 
   <div fxFlex="40">
-    <h3>{{'Comments' | uppercase}}</h3>
     <div *ngIf="dish?.comments">
+      <h3>{{'Comments' | uppercase}}</h3>
       <mat-list>
         <mat-list-item *ngFor="let comment of dish.comments">
           <p mat-line>{{comment.comment}}</p>

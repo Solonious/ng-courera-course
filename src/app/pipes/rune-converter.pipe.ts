@@ -1,0 +1,15 @@
+import { Pipe, PipeTransform } from '@angular/core';
+
+import transcribe from 'rune-converter';
+
+
+@Pipe({
+  name: 'runeConverter'
+})
+export class RuneConverterPipe implements PipeTransform {
+
+  transform(value: string): string {
+    return transcribe(value, {spacing: 'normal'});
+  }
+
+}

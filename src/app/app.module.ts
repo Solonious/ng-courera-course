@@ -13,6 +13,7 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
 import { DishService } from "./services/dish.service";
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { RuneConverterPipe } from './pipes/rune-converter.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FooterComponent } from './footer/footer.component';
     MenuComponent,
     DishdetailComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    RuneConverterPipe
   ],
   imports: [
     BrowserModule,
