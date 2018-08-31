@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { Dish } from "../shared/dish";
-import { DISHES } from "../shared/dishes-data";
 
 @Component({
   selector: 'app-dishdetail',
@@ -10,7 +9,7 @@ import { DISHES } from "../shared/dishes-data";
 })
 export class DishdetailComponent implements OnInit {
 
-  selectedDish = DISHES[0];
+  @Input() dish: Dish;
 
   constructor() { }
 
