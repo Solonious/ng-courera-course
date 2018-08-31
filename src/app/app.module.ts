@@ -1,8 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatListModule} from '@angular/material/list';
+import { MaterialUiModule } from "./material-ui/material-ui.module";
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgModule } from '@angular/core';
 
@@ -19,10 +17,8 @@ import { MenuComponent } from './menu/menu.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
+    MaterialUiModule,
     FlexLayoutModule,
-    MatMenuModule,
-    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
