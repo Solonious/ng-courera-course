@@ -19,6 +19,7 @@ import { ContactComponent } from './contact/contact.component';
 import { TopicService } from "./services/topic.service";
 
 import { RuneConverterPipe } from './pipes/rune-converter.pipe';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { RuneConverterPipe } from './pipes/rune-converter.pipe';
     RuneConverterPipe,
     AboutComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
