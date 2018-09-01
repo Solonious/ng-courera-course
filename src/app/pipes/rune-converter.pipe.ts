@@ -8,8 +8,8 @@ import transcribe from 'rune-converter';
 })
 export class RuneConverterPipe implements PipeTransform {
 
-  transform(value: string): string {
-    return transcribe(value, {spacing: 'normal'});
+  transform(value: string, spacing?): string {
+    return transcribe(value, spacing ? {spacing} : {spacing: 'normal'});
   }
 
 }
