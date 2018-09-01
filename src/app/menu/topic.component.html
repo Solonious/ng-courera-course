@@ -8,11 +8,11 @@
   </div>
   <div fxFlex>
     <mat-grid-list cols="3" rowHeight="250px">
-      <mat-grid-tile *ngFor="let dish of dishes" (click)="onSelect(dish)">
-        <img hight="200px" src={{dish.image}} alt={{dish.name}}>
+      <mat-grid-tile *ngFor="let topic of topics" (click)="onSelect(topic)">
+        <img hight="200px" src={{topic.image}} alt={{topic.name}}>
         <mat-grid-tile-footer>
-          <h1 matLine>{{dish.name | uppercase}}</h1>
-          <h2 matLine>{{dish.name | runeConverter}}</h2>
+          <h1 matLine>{{topic.name | uppercase}}</h1>
+          <h2 matLine>{{topic.name | runeConverter}}</h2>
         </mat-grid-tile-footer>
       </mat-grid-tile>
     </mat-grid-list>
@@ -20,5 +20,5 @@
   <div>
     <hr>
   </div>
-  <app-dishdetail [dish]="selectedDish"></app-dishdetail>
+  <app-topicdetail [topic]="selectedTopic"></app-topicdetail>
 </div>

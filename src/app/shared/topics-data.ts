@@ -1,6 +1,6 @@
-import { Dish } from "./dish";
+import { Topic } from "./topic";
 
-export const DISHES: Dish[] = [
+export const TOPICS: Topic[] = [
   {
     name: 'Valhala',
     image: '/assets/images/swords-color.svg',

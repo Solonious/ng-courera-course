@@ -7,10 +7,10 @@ import { NgModule } from '@angular/core';
 import 'hammerjs';
 
 import { AppComponent } from './app.component';
-import { MenuComponent } from './menu/menu.component';
-import { DishdetailComponent } from './dishdetail/dishdetail.component';
+import { TopicComponent } from './menu/topic.component';
+import { TopicdetailComponent } from './topicdetail/topicdetail.component';
 
-import { DishService } from "./services/dish.service";
+import { TopicService } from "./services/topic.service";
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RuneConverterPipe } from './pipes/rune-converter.pipe';
@@ -18,8 +18,8 @@ import { RuneConverterPipe } from './pipes/rune-converter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
-    DishdetailComponent,
+    TopicComponent,
+    TopicdetailComponent,
     HeaderComponent,
     FooterComponent,
     RuneConverterPipe
@@ -30,7 +30,7 @@ import { RuneConverterPipe } from './pipes/rune-converter.pipe';
     MaterialUiModule,
     FlexLayoutModule,
   ],
-  providers: [DishService],
+  providers: [TopicService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
