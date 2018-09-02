@@ -20,6 +20,7 @@ import { TopicService } from "./services/topic.service";
 
 import { RuneConverterPipe } from './pipes/rune-converter.pipe';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { SkranjiFontDirective } from './directives/skranji-font.directive';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AboutComponent,
     HomeComponent,
     ContactComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SkranjiFontDirective
   ],
   imports: [
     BrowserModule,
