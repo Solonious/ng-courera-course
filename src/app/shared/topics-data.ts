@@ -2,6 +2,7 @@ import { Topic } from "./topic";
 
 export const TOPICS: Topic[] = [
   {
+    id: 0,
     name: 'Valhala',
     image: '/assets/images/swords-color.svg',
     category: 'Snack',
@@ -40,6 +41,7 @@ export const TOPICS: Topic[] = [
         date: '2011-12-02T17:57:28.556094Z'
       }]
   }, {
+  id: 1,
   name: 'Uthappizza',
   image: '/assets/images/thor.svg',
   category: 'mains',
@@ -79,6 +81,7 @@ export const TOPICS: Topic[] = [
         date: '2011-12-02T17:57:28.556094Z'
       }]
   }, {
+  id: 2,
   name: 'Zucchipakoda',
   image: '/assets/images/helmet.svg',
   category: 'appetizer',
@@ -118,6 +121,7 @@ export const TOPICS: Topic[] = [
       }
     ]
 }, {
+  id: 3,
   name: 'Vadonut',
   image: '/assets/images/axe.svg',
   category: 'appetizer',
@@ -157,6 +161,7 @@ export const TOPICS: Topic[] = [
       }
     ]
 }, {
+  id: 4,
   name: 'ElaiCheese Cake',
   image: '/assets/images/horn.svg',
   category: 'dessert',
@@ -196,6 +201,7 @@ export const TOPICS: Topic[] = [
       },
     ]
 }, {
+  id: 5,
     name: 'ElaiCheese Cake',
     image: '/assets/images/shield-color.svg',
     category: 'dessert',
@@ -235,6 +241,7 @@ export const TOPICS: Topic[] = [
       },
     ]
   }, {
+    id: 6,
     name: 'ElaiCheese Cake',
     image: '/assets/images/viking.svg',
     category: 'dessert',
@@ -274,6 +281,7 @@ export const TOPICS: Topic[] = [
       },
     ]
   }, {
+    id: 7,
     name: 'ElaiCheese Cake',
     image: '/assets/images/amulet.svg',
     category: 'dessert',
@@ -313,6 +321,7 @@ export const TOPICS: Topic[] = [
       },
     ]
   }, {
+    id: 8,
     name: 'ElaiCheese Cake',
     image: '/assets/images/viking-ship.svg',
     category: 'dessert',

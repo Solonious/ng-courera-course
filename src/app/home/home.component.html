@@ -1,3 +1,24 @@
-<p>
-  home works!
-</p>
+<div class="container"
+     fxLayout="column"
+     fxLayoutGap="10px">
+  <div fxFlex *ngIf="articles">
+    <mat-grid-list [cols]="4" rowHeight="2:3">
+      <mat-grid-tile *ngFor="let article of articles">
+        <mat-card >
+          <img mat-card-image src={{article.image}} alt={{article.heading}}>
+          <mat-card-content>
+            <mat-card-title>
+              <h3 appSkranjiFont>{{article.heading | uppercase}}</h3>
+            </mat-card-title>
+            <mat-card-actions>
+              <a mat-button>Read More {{'.' | runeConverter}}</a>
+            </mat-card-actions>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+  </div>
+
+
+</div>

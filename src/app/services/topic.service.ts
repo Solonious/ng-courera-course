@@ -14,4 +14,8 @@ export class TopicService {
     return TOPICS;
   }
 
+  getTopic(id: number): Topic {
+    return TOPICS.filter(topic => topic.id === id)[0];
+  }
+
 }
