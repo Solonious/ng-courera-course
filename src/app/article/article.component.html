@@ -1,0 +1,36 @@
+<style>
+  .image-container {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+  }
+  .content {
+    text-indent: 30px;
+    font-family: Roboto,'Helvetica Neue',sans-serif;
+  }
+</style>
+
+<div class="container"
+     fxLayout="row"
+     fxLayout.sm="column"
+     fxLayout.xs="column"
+     fxLayoutAlign.gt-md="space-around center"
+     fxLayoutGap="10px"
+     fxLayoutGap.xs="0">
+
+  <div fxFlex="40">
+    <div fxFlex *ngIf="article">
+      <div class="image-container">
+        <img mat-card-image width="100%" src={{article.image}} alt={{article.heading}}>
+      </div>
+    </div>
+  </div>
+
+  <div fxFlex="40">
+    <div *ngIf="article">
+      <h3 appSkranjiFont>{{article.heading}}</h3>
+      <p class="content">{{article.body}}</p>
+      <a mat-button (click)="goBack()">Back</a>
+    </div>
+  </div>
+</div>

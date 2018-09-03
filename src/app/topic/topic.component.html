@@ -8,7 +8,7 @@
   </div>
   <div fxFlex>
     <mat-grid-list [cols]="3" rowHeight="250px">
-      <mat-grid-tile *ngFor="let topic of topics" (click)="onSelect(topic)">
+      <mat-grid-tile *ngFor="let topic of topics" [routerLink]="['/topic', topic.id]">
         <img hight="200px" src={{topic.image}} alt={{topic.name}}>
         <mat-grid-tile-footer>
           <h1 matLine>{{topic.name | uppercase}}</h1>
@@ -20,5 +20,4 @@
   <div>
     <hr>
   </div>
-  <app-topicdetail [topic]="selectedTopic"></app-topicdetail>
 </div>

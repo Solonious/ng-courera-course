@@ -4,7 +4,7 @@
   <div fxFlex *ngIf="articles">
     <mat-grid-list [cols]="4" rowHeight="2:3">
       <mat-grid-tile *ngFor="let article of articles">
-        <mat-card >
+        <mat-card [routerLink]="['/article', article.id]">
           <img mat-card-image src={{article.image}} alt={{article.heading}} height="200px">
           <mat-card-content>
             <mat-card-title>
@@ -17,8 +17,5 @@
         </mat-card>
       </mat-grid-tile>
     </mat-grid-list>
-
   </div>
-
-
 </div>

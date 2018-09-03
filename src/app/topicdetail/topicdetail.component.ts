@@ -1,4 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TopicService } from "../services/topic.service";
+
+import { Params, ActivatedRoute } from "@angular/router";
+import { Location } from "@angular/common";
 
 import { Topic } from "../shared/topic";
 
@@ -9,11 +13,21 @@ import { Topic } from "../shared/topic";
 })
 export class TopicdetailComponent implements OnInit {
 
-  @Input() topic: Topic;
+  topic: Topic;
 
-  constructor() { }
+  constructor(
+    private topicService: TopicService,
+    private route: ActivatedRoute,
+    private location: Location
+  ) { }
 
   ngOnInit() {
+    const id = +this.route.snapshot.params['id'];
+    this.topic = this.topicService.getTopic(id);
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }
