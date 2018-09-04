@@ -1,15 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialUiModule } from "./material-ui/material-ui.module";
-import { FlexLayoutModule } from '@angular/flex-layout';
+import { CoreModule } from "./core/core.module";
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from "./app-routing/app-routing.module";
+import { AppRoutingModule } from "./app-routing.module";
 
 import 'hammerjs';
 
 import { AppComponent } from './app.component';
-import { TopicComponent } from './topic/topic.component';
-import { TopicdetailComponent } from './topicdetail/topicdetail.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
@@ -18,7 +15,6 @@ import { ContactComponent } from './contact/contact.component';
 
 import { TopicService } from "./services/topic.service";
 
-import { RuneConverterPipe } from './pipes/rune-converter.pipe';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SkranjiFontDirective } from './directives/skranji-font.directive';
 import { ArticleComponent } from './article/article.component';
@@ -27,11 +23,8 @@ import { ArticleComponent } from './article/article.component';
 @NgModule({
   declarations: [
     AppComponent,
-    TopicComponent,
-    TopicdetailComponent,
     HeaderComponent,
     FooterComponent,
-    RuneConverterPipe,
     AboutComponent,
     HomeComponent,
     ContactComponent,
@@ -42,8 +35,7 @@ import { ArticleComponent } from './article/article.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialUiModule,
-    FlexLayoutModule,
+    CoreModule,
     AppRoutingModule
   ],
   providers: [TopicService],
