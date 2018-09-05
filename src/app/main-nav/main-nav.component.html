@@ -1,0 +1,39 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    fxHide fxShow.xs
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)">
+    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/home">Home</a>
+      <a mat-list-item routerLink="/about">About</a>
+      <a mat-list-item routerLink="/topic">Topic</a>
+      <a mat-list-item routerLink="/contact">Contact</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        fxHide fxShow.xs
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span [ngClass.xs]="'menu-icon-xs'"><img src="/assets/images/viking-ship.svg" height=60 width=40></span>
+      <span class="flex-spacer"></span>
+      <div fxShow fxHide.xs>
+        <a mat-button routerLink="/home" routerLinkActive="active"><img src="/assets/images/house.svg" height="20" width="20"> Home</a>
+        <a mat-button routerLink="/about" routerLinkActive="active"><img src="/assets/images/shield.svg" height="20" width="20"> About</a>
+        <a mat-button routerLink="/topic" routerLinkActive="active"><img src="/assets/images/swords.svg" height="20" width="20"> Topic</a>
+        <a mat-button routerLink="/contact" routerLinkActive="active"><img src="/assets/images/arrows.svg" height="20" width="20"> Contact</a>
+      </div>
+    </mat-toolbar>
+  </mat-sidenav-content>
+</mat-sidenav-container>

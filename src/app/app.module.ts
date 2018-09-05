@@ -18,6 +18,9 @@ import { TopicService } from "./services/topic.service";
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SkranjiFontDirective } from './directives/skranji-font.directive';
 import { ArticleComponent } from './article/article.component';
+import { MainNavComponent } from './main-nav/main-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 
 
 @NgModule({
@@ -30,13 +33,20 @@ import { ArticleComponent } from './article/article.component';
     ContactComponent,
     NotFoundComponent,
     SkranjiFontDirective,
-    ArticleComponent
+    ArticleComponent,
+    MainNavComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     CoreModule,
-    AppRoutingModule
+    AppRoutingModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [TopicService],
   bootstrap: [AppComponent]
