@@ -5,7 +5,7 @@
   </div>
 </div>
   <div class="container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center stretch">
-      <mat-card style="margin:5px" fxFlex="30" fxFlex.sm="45" *ngFor="let article of articles" >
+      <mat-card style="margin:5px" fxFlex="30" fxFlex.sm="45" *ngFor="let article of articles" [routerLink]="['/article', article.id]">
         <img mat-card-image src={{article.image}} alt={{article.heading}} height="200px">
         <mat-card-content>
           <mat-card-title>

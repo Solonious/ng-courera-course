@@ -1,7 +1,7 @@
 <style>
   .image-container {
     width: 100%;
-    height: 300px;
+    /*height: 300px;*/
     overflow: hidden;
   }
   .content {
@@ -14,7 +14,7 @@
      fxLayout="row"
      fxLayout.sm="column"
      fxLayout.xs="column"
-     fxLayoutAlign.gt-md="space-around center"
+     fxLayoutAlign.gt-sm="space-around center"
      fxLayoutGap="10px"
      fxLayoutGap.xs="0">
 
@@ -26,7 +26,7 @@
     </div>
   </div>
 
-  <div fxFlex="40">
+  <div fxFlex="50">
     <div *ngIf="article">
       <h3 appSkranjiFont>{{article.heading}}</h3>
       <p class="content">{{article.body}}</p>
