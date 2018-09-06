@@ -2,20 +2,18 @@
      fxLayout="column"
      fxLayoutGap="10px">
   <div fxFlex *ngIf="articles">
-    <mat-grid-list [cols]="4" rowHeight="2:3">
-      <mat-grid-tile *ngFor="let article of articles">
-        <mat-card [routerLink]="['/article', article.id]">
-          <img mat-card-image src={{article.image}} alt={{article.heading}} height="200px">
-          <mat-card-content>
-            <mat-card-title>
-              <h5 appSkranjiFont>{{article.heading | uppercase}}</h5>
-            </mat-card-title>
-            <mat-card-actions>
-              <a mat-button>Read More {{'.' | runeConverter}}</a>
-            </mat-card-actions>
-          </mat-card-content>
-        </mat-card>
-      </mat-grid-tile>
-    </mat-grid-list>
   </div>
 </div>
+  <div class="container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center stretch">
+      <mat-card style="margin:5px" fxFlex="30" fxFlex.sm="45" *ngFor="let article of articles" >
+        <img mat-card-image src={{article.image}} alt={{article.heading}} height="200px">
+        <mat-card-content>
+          <mat-card-title>
+            <h5 appSkranjiFont>{{article.heading | uppercase}}</h5>
+          </mat-card-title>
+          <mat-card-actions>
+            <a mat-button>Read More</a>
+          </mat-card-actions>
+        </mat-card-content>
+      </mat-card>
+  </div>
