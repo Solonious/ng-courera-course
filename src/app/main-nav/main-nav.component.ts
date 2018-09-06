@@ -3,6 +3,9 @@ import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/l
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+import { MatDialog, MatDialogRef } from '@angular/material';
+import { LoginComponent } from '../login/login.component';
+
 @Component({
   selector: 'main-nav',
   templateUrl: './main-nav.component.html',
@@ -15,6 +18,9 @@ export class MainNavComponent {
       map(result => result.matches)
     );
     
-  constructor(private breakpointObserver: BreakpointObserver) {}
-  
+  constructor(private breakpointObserver: BreakpointObserver, public dialog: MatDialog) {}
+
+    openLoginForm() {
+      this.dialog.open(LoginComponent, {width: '300px', height:'350px'})
+    }
   }

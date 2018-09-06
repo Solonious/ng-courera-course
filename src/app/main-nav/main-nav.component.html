@@ -13,7 +13,7 @@
       <a mat-list-item routerLink="/about">About</a>
       <a mat-list-item routerLink="/topic">Topic</a>
       <a mat-list-item routerLink="/contact">Contact</a>
-      <a mat-list-item routerLink="/login">Login</a>
+      <a mat-list-item (click)="openLoginForm()">Login</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -34,7 +34,7 @@
         <a mat-button routerLink="/about" routerLinkActive="active"><img src="/assets/images/shield.svg" height="20" width="20"> About</a>
         <a mat-button routerLink="/topic" routerLinkActive="active"><img src="/assets/images/swords.svg" height="20" width="20"> Topic</a>
         <a mat-button routerLink="/contact" routerLinkActive="active"><img src="/assets/images/arrows.svg" height="20" width="20"> Contact</a>
-        <a mat-icon-button routerLink="/login"><img src="/assets/images/fingerprint.svg" height="20" width="20"></a>
+        <a mat-icon-button (click)="openLoginForm()"><img src="/assets/images/fingerprint.svg" height="20" width="20"></a>
       </div>
     </mat-toolbar>
   </mat-sidenav-content>

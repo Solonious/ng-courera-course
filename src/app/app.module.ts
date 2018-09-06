@@ -36,7 +36,7 @@ import { LoginComponent } from './login/login.component';
     SkranjiFontDirective,
     ArticleComponent,
     MainNavComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +51,7 @@ import { LoginComponent } from './login/login.component';
     MatListModule
   ],
   providers: [TopicService],
+  entryComponents: [LoginComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

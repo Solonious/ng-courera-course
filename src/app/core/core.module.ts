@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialUiModule } from "../material-ui/material-ui.module";
+import { FormsModule } from '@angular/forms';
+
 
 import { RuneConverterPipe} from "../pipes/rune-converter.pipe";
 
@@ -11,13 +13,15 @@ import { RuneConverterPipe} from "../pipes/rune-converter.pipe";
   imports: [
     CommonModule,
     FlexLayoutModule,
-    MaterialUiModule
+    MaterialUiModule,
+    FormsModule,
   ],
   declarations: [RuneConverterPipe],
   exports: [
     RuneConverterPipe,
     FlexLayoutModule,
-    MaterialUiModule
+    MaterialUiModule,
+    FormsModule,
   ]
 })
 export class CoreModule { }

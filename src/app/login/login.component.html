@@ -1,3 +1,31 @@
-<p>
-  login works!
-</p>
+<mat-toolbar>
+  <h2 appSkranjiFont>{{'login'| uppercase}}</h2>
+  <span class="flex-spacer"></span>
+  <button mat-icon-button mat-dialog-close><i class="fa fa-2x fa-times-circle"></i></button>
+</mat-toolbar>
+
+<form novalidate autocomplete="off" (ngSubmit)="onSubmit()">
+
+  <mat-dialog-content>
+    <p>
+      <mat-form-field>
+        <mat-label appSkranjiFont>Name</mat-label>
+        <mat-icon matPrefix><i class="fa fa-user"></i></mat-icon>
+        <input mat-line matInput placeholder="{{'Name' | runeConverter}}" type="text" [(ngModel)]="user.username" name="username">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label appSkranjiFont>Password</mat-label>
+        <mat-icon matPrefix><i class="fa fa-lock"></i></mat-icon>
+        <input matInput type="password" placeholder="{{'Password' | runeConverter}}" [(ngModel)]="user.password" name="password">
+      </mat-form-field>
+      <br>
+      <mat-checkbox appSkranjiFont [(ngModel)]="user.remember" name="remember">Remember Me</mat-checkbox>
+    </p>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <span class="flex-spacer"></span>
+    <button mat-icon-button><img src="/assets/images/close-cross.svg" height=30 width=30></button>
+    <button type="submit" mat-icon-button><img src="/assets/images/checked-symbol.svg" height=30 width=30></button>
+  </mat-dialog-actions>
+</form>
