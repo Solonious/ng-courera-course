@@ -21,6 +21,7 @@ import { ArticleComponent } from './article/article.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
     NotFoundComponent,
     SkranjiFontDirective,
     ArticleComponent,
-    MainNavComponent
+    MainNavComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
