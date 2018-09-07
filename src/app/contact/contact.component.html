@@ -48,26 +48,28 @@
       </mat-expansion-panel-header>
 
       <div fxFlex fxFlexOffset="20px" class="form-size">
-        <p>{{ feedbackForm.value | json }} {{ feedbackForm.status | json }}</p>
 
-        <form novalidate autocomplete="off" [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+        <form novalidate autocomplete="off" [formGroup]="feedbackForm" #fform="ngForm" (ngSubmit)="onSubmit()">
           <p>
             <mat-form-field class="half-width">
               <mat-label appSkranjiFont>Name</mat-label>
               <mat-icon matPrefix><i class="fa fa-user"></i></mat-icon>
               <input mat-line matInput formControlName="firstname" placeholder="{{'Name'| runeConverter}}" type="text" required>
+              <mat-error *ngIf="feedbackForm.get('firstname').hasError('required') && feedbackForm.get('firstname').touched">First name is required</mat-error>
             </mat-form-field>
             <mat-form-field class="half-width">
               <mat-label appSkranjiFont>Nick Name</mat-label>
               <mat-icon matPrefix><i class="fa fa-user-secret"></i></mat-icon>
-              <input matInput formControlName="nickname" placeholder="{{'Nick Name'| runeConverter}}" type="text">
+              <input matInput formControlName="nickname" placeholder="{{'Nick Name'| runeConverter}}" type="text" required>
+              <mat-error *ngIf="feedbackForm.get('nickname').hasError('required') && feedbackForm.get('nickname').touched">Nick name is required</mat-error>
             </mat-form-field>
           </p>
           <p>
             <mat-form-field class="half-width">
               <mat-label appSkranjiFont>Email</mat-label>
               <mat-icon matPrefix><i class="fa fa-at"></i></mat-icon>
-              <input matInput formControlName="email" placeholder="{{'Email'| runeConverter}}" type="email">
+              <input matInput formControlName="email" placeholder="{{'Email'| runeConverter}}" type="email" required>
+              <mat-error *ngIf="feedbackForm.get('email').hasError('required') && feedbackForm.get('email').touched">Email ID is required</mat-error>
             </mat-form-field>
           </p>
           <table class="form-size">
@@ -82,8 +84,10 @@
               <textarea matInput formControlName="message" placeholder="{{'Your Feedback'| runeConverter}}" rows=12></textarea>
             </mat-form-field>
           </p>
-          <button type="submit" mat-button class="background-primary text-floral-white">Submit</button>
-        </form>
+          <button mat-icon-button><img src="/assets/images/close-cross.svg" height=30 width=30></button>
+          <button type="submit" mat-icon-button>
+            <img src="/assets/images/checked-symbol.svg" height=30 width=30>
+          </button>        </form>
       </div>
     </mat-expansion-panel>
   </mat-accordion>
