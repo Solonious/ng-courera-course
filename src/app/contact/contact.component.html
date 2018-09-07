@@ -15,19 +15,19 @@
       <div fxFlex="50" fxFlexOffset="20px">
         <h4>Our Address</h4>
         <address>
-          121, Clear Water Bay Road<br>
-          Clear Water Bay, Kowloon<br>
-          HONG KONG<br>
+          Odin's Hall<br>
+          Valhalla<br>
+          Asgard<br>
           <i class="fa fa-phone"></i>: +852 1234 5678<br>
           <i class="fa fa-fax"></i>: +852 8765 4321<br>
           <i class="fa fa-envelope"></i>:
-          <a href="mailto:confusion@food.net">confusion@food.net</a>
+          <a href="mailto:vikings@world.net">confusion@food.net</a>
         </address>
         <p></p>
         <div>
-          <a mat-raised-button href="tel:+85212345678"><i class="fa fa-phone"></i> Call</a>
-          <a mat-raised-button><i class="fa fa-skype"></i> Skype</a>
-          <a mat-raised-button href="mailto:confusion@food.net"><i class="fa fa-envelope-o"></i> Email</a>
+          <a mat-icon-button href="tel:+85212345678"><i class="fa fa-phone fa-2x"></i></a>
+          <a mat-icon-button><i class="fa fa-skype fa-2x"></i></a>
+          <a mat-icon-button href="mailto:vikings@world.net"><i class="fa fa-envelope-o fa-2x"></i></a>
         </div>
       </div>
       <div fxFlex="40">
@@ -35,4 +35,57 @@
       </div>
     </div>
   </div>
+
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h3 appSkranjiFont>Send us your Feedback</h3>
+        </mat-panel-title>
+        <mat-panel-description>
+          <h4>{{'Send us your Feedback'| runeConverter}}</h4>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div fxFlex fxFlexOffset="20px" class="form-size">
+        <p>{{ feedbackForm.value | json }} {{ feedbackForm.status | json }}</p>
+
+        <form novalidate autocomplete="off" [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+          <p>
+            <mat-form-field class="half-width">
+              <mat-label appSkranjiFont>Name</mat-label>
+              <mat-icon matPrefix><i class="fa fa-user"></i></mat-icon>
+              <input mat-line matInput formControlName="firstname" placeholder="{{'Name'| runeConverter}}" type="text" required>
+            </mat-form-field>
+            <mat-form-field class="half-width">
+              <mat-label appSkranjiFont>Nick Name</mat-label>
+              <mat-icon matPrefix><i class="fa fa-user-secret"></i></mat-icon>
+              <input matInput formControlName="nickname" placeholder="{{'Nick Name'| runeConverter}}" type="text">
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field class="half-width">
+              <mat-label appSkranjiFont>Email</mat-label>
+              <mat-icon matPrefix><i class="fa fa-at"></i></mat-icon>
+              <input matInput formControlName="email" placeholder="{{'Email'| runeConverter}}" type="email">
+            </mat-form-field>
+          </p>
+          <table class="form-size">
+            <td>
+              <mat-slide-toggle formControlName="agree"><span appSkranjiFont>May we contact you?</span></mat-slide-toggle>
+            </td>
+            <td></td>
+          </table>
+          <p>
+            <mat-form-field class="full-width">
+              <mat-label appSkranjiFont>Your feedback</mat-label>
+              <textarea matInput formControlName="message" placeholder="{{'Your Feedback'| runeConverter}}" rows=12></textarea>
+            </mat-form-field>
+          </p>
+          <button type="submit" mat-button class="background-primary text-floral-white">Submit</button>
+        </form>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
 </div>
