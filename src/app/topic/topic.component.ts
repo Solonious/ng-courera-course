@@ -18,11 +18,7 @@ export class TopicComponent implements OnInit {
   constructor(private topicService: TopicService) { }
 
   ngOnInit() {
-    this.topics = this.topicService.getTopics();
-  }
-
-  onSelect(topic) {
-    this.selectedTopic = topic;
+    this.topicService.getTopics().then(topics => this.topics = topics);
   }
 
 }

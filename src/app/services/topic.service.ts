@@ -10,12 +10,12 @@ export class TopicService {
 
   constructor() { }
 
-  getTopics(): Topic[] {
-    return TOPICS;
+  getTopics(): Promise<Topic[]> {
+    return Promise.resolve(TOPICS);
   }
 
-  getTopic(id: number): Topic {
-    return TOPICS.filter(topic => topic.id === id)[0];
+  getTopic(id: number): Promise<Topic> {
+    return Promise.resolve(TOPICS.filter(topic => topic.id === id)[0]);
   }
 
 }

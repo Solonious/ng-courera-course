@@ -84,10 +84,11 @@
               <textarea matInput formControlName="message" placeholder="{{'Your Feedback'| runeConverter}}" rows=12></textarea>
             </mat-form-field>
           </p>
-          <button mat-icon-button><img src="/assets/images/close-cross.svg" height=30 width=30></button>
+          <button mat-icon-button (click)="resetForm()"><img src="/assets/images/close-cross.svg" height=30 width=30></button>
           <button type="submit" mat-icon-button>
             <img src="/assets/images/checked-symbol.svg" height=30 width=30>
-          </button>        </form>
+          </button>
+        </form>
       </div>
     </mat-expansion-panel>
   </mat-accordion>
