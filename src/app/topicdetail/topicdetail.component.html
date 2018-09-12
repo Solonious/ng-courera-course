@@ -4,10 +4,12 @@
      fxLayout.xs="column"
      fxLayoutAlign.gt-md="space-around center"
      fxLayoutGap="10px"
-     fxLayoutGap.xs="0">
+     fxLayoutGap.xs="0"
+     *ngIf="topic"
+>
 
   <div fxFlex="40">
-    <div fxFlex *ngIf="topic">
+    <div fxFlex>
       <mat-card>
         <mat-card-header>
           <mat-card-title>
@@ -39,5 +41,11 @@
         </mat-list-item>
       </mat-list>
     </div>
+  </div>
+</div>
+
+<div [hidden]="topic">
+  <div fxLayoutAlign="center center" style="min-height: 600px">
+    <mat-spinner></mat-spinner>
   </div>
 </div>
