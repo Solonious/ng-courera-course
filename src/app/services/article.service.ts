@@ -10,10 +10,18 @@ export class ArticleService {
   constructor() { }
 
   getArticles(): Promise<Article[]> {
-    return Promise.resolve(ARTICLES);
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve(ARTICLES);
+      }, 2000);
+    });
   }
 
   getArticle(id: number): Promise<Article> {
-    return Promise.resolve(ARTICLES.filter(article => article.id === id)[0]);
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve(ARTICLES.filter(article => article.id === id)[0]);
+        }, 5000);
+    });
   }
 }

@@ -1,10 +1,9 @@
-<div class="container"
-     fxLayout="column"
-     fxLayoutGap="10px">
-  <div fxFlex *ngIf="articles">
-  </div>
-</div>
-  <div class="container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center stretch">
+<style>
+  .app-loader {
+    min-height: 600px;
+  }
+</style>
+<div *ngIf="articles" class="container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center stretch">
       <mat-card style="margin:5px" fxFlex="30" fxFlex.sm="45" *ngFor="let article of articles" [routerLink]="['/article', article.id]">
         <img mat-card-image src={{article.image}} alt={{article.heading}} height="200px">
         <mat-card-content>
@@ -14,3 +13,8 @@
         </mat-card-content>
       </mat-card>
   </div>
+<div [hidden]="articles">
+  <div class="app-loader" fxLayoutAlign="center center">
+    <mat-spinner></mat-spinner>
+  </div>
+</div>
