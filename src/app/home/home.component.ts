@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   constructor(private atricleService: ArticleService) { }
 
   ngOnInit() {
-    this.atricleService.getArticles().then(articles => this.articles = articles);
+    this.atricleService.getArticles().subscribe(articles => this.articles = articles);
   }
 
 }

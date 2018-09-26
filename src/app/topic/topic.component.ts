@@ -13,12 +13,10 @@ export class TopicComponent implements OnInit {
 
   topics: Topic[];
 
-  selectedTopic: Topic;
-
   constructor(private topicService: TopicService) { }
 
   ngOnInit() {
-    this.topicService.getTopics().then(topics => this.topics = topics);
+    this.topicService.getTopics().subscribe(topics => this.topics = topics);
   }
 
 }

@@ -23,7 +23,7 @@ export class TopicdetailComponent implements OnInit {
 
   ngOnInit() {
     const id = +this.route.snapshot.params['id'];
-    this.topicService.getTopic(id).then(topic => this.topic = topic);
+    this.topicService.getTopic(id).subscribe(topic => this.topic = topic);
   }
 
   goBack(): void {

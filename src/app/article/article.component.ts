@@ -23,7 +23,7 @@ export class ArticleComponent implements OnInit {
 
   ngOnInit() {
     const id = +this.route.snapshot.params['id'];
-    this.articleService.getArticle(id).then(article => this.article = article);
+    this.articleService.getArticle(id).subscribe(article => this.article = article);
   }
 
   goBack(): void {
