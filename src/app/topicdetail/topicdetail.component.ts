@@ -6,6 +6,8 @@ import { Location } from "@angular/common";
 
 import { Topic } from "../shared/topic";
 
+import { switchMap } from "rxjs/operators";
+
 @Component({
   selector: 'app-topicdetail',
   templateUrl: './topicdetail.component.html',
@@ -22,8 +24,8 @@ export class TopicdetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const id = +this.route.snapshot.params['id'];
-    this.topicService.getTopic(id).subscribe(topic => this.topic = topic);
+    this.route.params.pipe(switchMap((params: Params) => this.topicService.getTopic(+params['id'])))
+      .subscribe(topic => this.topic = topic);
   }
 
   goBack(): void {
