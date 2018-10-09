@@ -5,6 +5,7 @@ import { Params, ActivatedRoute } from "@angular/router";
 import { Location } from "@angular/common";
 
 import { Article } from "../shared/article";
+import {switchMap} from "rxjs/operators";
 
 @Component({
   selector: 'app-article',
@@ -22,8 +23,8 @@ export class ArticleComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const id = +this.route.snapshot.params['id'];
-    this.articleService.getArticle(id).subscribe(article => this.article = article);
+    this.route.params.pipe(switchMap((params: Params) => this.articleService.getArticle(+params['id'])))
+      .subscribe(article => this.article = article);
   }
 
   goBack(): void {
