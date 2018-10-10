@@ -4,7 +4,7 @@
   <button mat-icon-button mat-dialog-close><i class="fa fa-2x fa-times-circle"></i></button>
 </mat-toolbar>
 
-<form novalidate autocomplete="off" #loginForm="ngForm" (ngSubmit)="onSubmit()">
+<form novalidate autocomplete="off" [formGroup]="loginForm" #fform="ngForm" (ngSubmit)="onSubmit()">
 
   <mat-dialog-content>
     <p>
@@ -12,31 +12,29 @@
         <mat-label appSkranjiFont>Name</mat-label>
         <mat-icon matPrefix><i class="fa fa-user"></i></mat-icon>
         <input mat-line matInput
-               type="text" name="username" required
-               placeholder="{{'Name' | runeConverter}}"
-               #username="ngModel"
-               [(ngModel)]="user.username">
-        <mat-error *ngIf="username.errors?.required">Username is required!</mat-error>
+               formControlName="nickname"
+               type="text" required
+               placeholder="{{'Name' | runeConverter}}">
+        <mat-error *ngIf="formErrors.nickname">{{formErrors.nickname}}</mat-error>
       </mat-form-field>
       <br>
       <mat-form-field>
         <mat-label appSkranjiFont>Password</mat-label>
         <mat-icon matPrefix><i class="fa fa-lock"></i></mat-icon>
         <input matInput
-               type="password" name="password" required
-               placeholder="{{'Password' | runeConverter}}"
-               #password="ngModel"
-               [(ngModel)]="user.password" >
-        <mat-error *ngIf="password.errors?.required">Password is required</mat-error>
+               formControlName="password"
+               type="password" required
+               placeholder="{{'Password' | runeConverter}}">
+        <mat-error *ngIf="formErrors.password">{{formErrors.password}}</mat-error>
       </mat-form-field>
       <br>
-      <mat-checkbox appSkranjiFont [(ngModel)]="user.remember" name="remember">Remember Me</mat-checkbox>
+      <mat-checkbox appSkranjiFont formControlName="remember">Remember Me</mat-checkbox>
     </p>
   </mat-dialog-content>
   <mat-dialog-actions>
     <span class="flex-spacer"></span>
     <button mat-icon-button><img src="/assets/images/close-cross.svg" height=30 width=30></button>
-    <button type="submit" mat-icon-button [disabled]="loginForm.form.invalid">
+    <button type="submit" mat-icon-button [disabled]="!loginForm.valid">
       <img src="/assets/images/checked-symbol.svg" height=30 width=30>
     </button>
   </mat-dialog-actions>

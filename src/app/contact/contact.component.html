@@ -55,21 +55,21 @@
               <mat-label appSkranjiFont>Name</mat-label>
               <mat-icon matPrefix><i class="fa fa-user"></i></mat-icon>
               <input mat-line matInput formControlName="firstname" placeholder="{{'Name'| runeConverter}}" type="text" required>
-              <mat-error *ngIf="feedbackForm.get('firstname').hasError('required') && feedbackForm.get('firstname').touched">First name is required</mat-error>
+              <mat-error *ngIf="formErrors.firstname">{{formErrors.firstname}}</mat-error>
             </mat-form-field>
             <mat-form-field class="half-width">
               <mat-label appSkranjiFont>Nick Name</mat-label>
               <mat-icon matPrefix><i class="fa fa-user-secret"></i></mat-icon>
               <input matInput formControlName="nickname" placeholder="{{'Nick Name'| runeConverter}}" type="text" required>
-              <mat-error *ngIf="feedbackForm.get('nickname').hasError('required') && feedbackForm.get('nickname').touched">Nick name is required</mat-error>
+              <mat-error *ngIf="formErrors.nickname">{{formErrors.nickname}}</mat-error>
             </mat-form-field>
           </p>
           <p>
             <mat-form-field class="half-width">
               <mat-label appSkranjiFont>Email</mat-label>
               <mat-icon matPrefix><i class="fa fa-at"></i></mat-icon>
-              <input matInput formControlName="email" placeholder="{{'Email'| runeConverter}}" type="email" required>
-              <mat-error *ngIf="feedbackForm.get('email').hasError('required') && feedbackForm.get('email').touched">Email ID is required</mat-error>
+              <input matInput formControlName="email" placeholder="{{'Email'| runeConverter}}" type="email" email required>
+              <mat-error *ngIf="formErrors.email">{{formErrors.email}}</mat-error>
             </mat-form-field>
           </p>
           <table class="form-size">
