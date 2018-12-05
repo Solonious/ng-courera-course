@@ -2,11 +2,6 @@
 
 var Joi = require('joi');
 
-module.exports = function(obj, schema) {
-  Joi.validate(obj, schema, function(err, value) {
-    return {
-      err,
-      value
-    }
-  });
+module.exports = function(obj, schema, cb) {
+  Joi.validate(obj, schema, cb);
 };

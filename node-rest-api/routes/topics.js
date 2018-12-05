@@ -1,16 +1,36 @@
 var Topic = require('../models').topicModel;
+var Article = require('../models').articleModel;
+
+var validator = require('../lib/joi-validate');
+var scalarSchema = require('../lib/scalar-schema');
 
 module.exports = {
   getAllTopics: function(req, res) {
+
     Topic.getTopics(function(err, result) {
       res.send(result);
     });
   },
+
   getTopicById: function(req, res) {
-    Topic.getTopic(req.params['topic_id'], function(err, result) {
-      res.send(result);
-    })
+
+    validator({id: req.params['topic_id']}, {id: scalarSchema.number}, function(err, value) {
+      if (err) throw err;
+
+      Topic.getTopic(value.id, function(err, result) {
+        res.send(result);
+      })
+    });
   },
-  getCurrentTopicArticles: function(topicId) {},
-  getCurrentTopicArticle: function(topicId, articleId) {}
+
+  getCurrentTopicArticles: function(req, res) {
+
+    validator({id: req.params['topic_id']}, {id: scalarSchema.number}, function(err, value) {
+      if (err) throw err;
+
+      Article.getArticlesByTopicId(value.id, function(err, result) {
+        res.send(result);
+      })
+    })
+  }
 };
