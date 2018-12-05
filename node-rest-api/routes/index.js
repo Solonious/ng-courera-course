@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var Users = require('./users');
+var Topics = require('./topics');
 
 var connection = require('../models/db');
 
@@ -9,11 +11,17 @@ router.get('/', function(req, res, next) {
   next();
 });
 
-router.get('/topic', function(req, res) {
-  connection.query('SELECT * FROM `Topic`', function(err, res, flds) {
-    console.log(res);
-    console.log(flds);
-  })
-});
+// USER
+router.get('/user/:user_id', Users.getUser);
+
+//TOPIC
+router.get('/topics', Topics.getAllTopics);
+router.get('/topic/:topic_id', Topics.getTopicById);
+router.get('topic/:topic_id/articles', Topics.getCurrentTopicArticles);
+router.get('topic/:topic_id/articles/:article_id', Topics.getCurrentTopicArticle);
+
+//ARTICLE
+router.get('/articles');
+router.get('/article/:article_id');
 
 module.exports = router;
