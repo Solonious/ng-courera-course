@@ -3,6 +3,10 @@ import { Injectable } from '@angular/core';
 import { Topic } from "../shared/topic";
 import { TOPICS } from "../shared/topics-data";
 
+import { HttpClient } from '@angular/common/http';
+
+import { endpoints } from '../shared/endpoints';
+
 import { Observable, of } from "rxjs";
 import { delay } from "rxjs/operators";
 
@@ -11,14 +15,14 @@ import { delay } from "rxjs/operators";
 })
 export class TopicService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getTopics(): Observable<Topic[]> {
-    return of(TOPICS).pipe(delay(2000))
+    return this.http.get<Topic[]>(endpoints.getTopics());
   }
 
   getTopic(id: number): Observable<Topic> {
-    return of(TOPICS.filter(topic => topic.id === id)[0]).pipe(delay(2000));
+    return this.http.get<Topic>(endpoints.getTopic(id));
   }
 
 }

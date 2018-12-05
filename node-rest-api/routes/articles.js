@@ -16,7 +16,7 @@ module.exports = {
       if (err) throw err;
 
       Article.getArticle(value.id, function(err, result) {
-        res.send(result);
+        res.send(result[0]);
       })
     });
   }

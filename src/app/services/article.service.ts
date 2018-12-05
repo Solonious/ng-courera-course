@@ -2,6 +2,10 @@ import { Injectable } from '@angular/core';
 import { Article } from "../shared/article";
 import { ARTICLES } from "../shared/articles-data";
 
+import { HttpClient } from "@angular/common/http";
+
+import { endpoints } from '../shared/endpoints';
+
 import { Observable, of } from "rxjs";
 import { delay } from "rxjs/operators";
 
@@ -10,13 +14,14 @@ import { delay } from "rxjs/operators";
 })
 export class ArticleService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getArticles(): Observable<Article[]> {
-    return of(ARTICLES).pipe(delay(2000));
+  getArticles(): Observable<Article[]>{
+    return this.http.get<Article[]>(endpoints.getArticles());
   }
 
   getArticle(id: number): Observable<Article> {
-    return of(ARTICLES.filter(article => article.id === id)[0]).pipe(delay(200));
+    return this.http.get<Article>(endpoints.getArticle(id));
+    // return of(ARTICLES.filter(article => article.id === id)[0]).pipe(delay(200));
   }
 }

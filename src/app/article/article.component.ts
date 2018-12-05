@@ -12,6 +12,7 @@ import {switchMap} from "rxjs/operators";
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.scss']
 })
+
 export class ArticleComponent implements OnInit {
 
   article: Article;
@@ -24,7 +25,9 @@ export class ArticleComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.pipe(switchMap((params: Params) => this.articleService.getArticle(+params['id'])))
-      .subscribe(article => this.article = article);
+      .subscribe(article => {
+        this.article = article
+      });
   }
 
   goBack(): void {

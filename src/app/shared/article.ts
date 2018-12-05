@@ -4,4 +4,5 @@ export class Article {
   image: string;
   body: string;
   publishDate: string;
+  topic_id: number;
 }

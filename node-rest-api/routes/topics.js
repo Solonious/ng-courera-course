@@ -18,7 +18,7 @@ module.exports = {
       if (err) throw err;
 
       Topic.getTopic(value.id, function(err, result) {
-        res.send(result);
+        res.send(result[0]);
       })
     });
   },
@@ -29,7 +29,7 @@ module.exports = {
       if (err) throw err;
 
       Article.getArticlesByTopicId(value.id, function(err, result) {
-        res.send(result);
+        res.send(result[0]);
       })
     })
   }
